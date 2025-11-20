@@ -17,16 +17,15 @@ import java.util.List;
 
 public class GemCapabilityProvider implements ICapabilityProvider, INBTSerializable<CompoundTag> {
 
-//    private final GemData backend = new GemData();
-//    private final LazyOptional<GemData> optional = LazyOptional.of(() -> backend);
-
-        private final GemData backend;
-        private final LazyOptional<GemData> optional;
+    private final GemData backend;
+    private final ItemStack stack;
+    private final LazyOptional<GemData> optional;
 
     // ItemStack から初期化するコンストラクタ
     public GemCapabilityProvider(ItemStack stack) {
         this.backend = new GemData();
         this.optional = LazyOptional.of(() -> backend);
+        this.stack = stack;
 
         // すでにItemStackにGemsがある場合は復元
         if (stack.hasTag() && stack.getTag().contains("Gems", 9)) { // 9 = TAG_LIST
@@ -38,31 +37,24 @@ public class GemCapabilityProvider implements ICapabilityProvider, INBTSerializa
 
     @Override
     public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
-        return cap == NGemExtBoxModCapabilities.GEM_CAP ? optional.cast() : LazyOptional.empty();
+        if (cap == NGemExtBoxModCapabilities.GEM_CAP) {
+            if (stack.getOrCreateTag().getBoolean("HasGemCap")) {
+                return optional.cast();
+            }
+        }
+        return LazyOptional.empty();
+
+//        return cap == NGemExtBoxModCapabilities.GEM_CAP ? optional.cast() : LazyOptional.empty();
     }
 
     @Override
     public CompoundTag serializeNBT() {
         return backend.serializeNBT();
-//        CompoundTag tag = new CompoundTag();
-//        List<ItemStack> gems = backend.getGems();
-//        ListTag listTag = new ListTag();
-//        for (ItemStack stack : gems) {
-//            listTag.add(stack.save(new CompoundTag()));
-//        }
-//        tag.put("Gems", listTag);
-//        return tag;
     }
 
     @Override
     public void deserializeNBT(CompoundTag nbt) {
         backend.deserializeNBT(nbt);
-//        ListTag listTag = nbt.getList("Gems", Tag.TAG_COMPOUND);
-//        List<ItemStack> list = new ArrayList<>();
-//        for (int i = 0; i < listTag.size(); i++) {
-//            list.add(ItemStack.of(listTag.getCompound(i)));
-//        }
-//        backend.setGems(list);
     }
 
     public void invalidate() {

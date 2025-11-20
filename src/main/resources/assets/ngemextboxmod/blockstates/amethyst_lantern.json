@@ -1,0 +1,6 @@
+{
+  "variants": {
+      "hanging=true":  { "model": "ngemextboxmod:block/amethyst_lantern_hanging" },
+      "hanging=false": { "model": "ngemextboxmod:block/amethyst_lantern" }
+  }
+}

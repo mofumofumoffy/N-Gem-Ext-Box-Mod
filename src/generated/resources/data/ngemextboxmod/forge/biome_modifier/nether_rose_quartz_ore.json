@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_nether",
+  "features": "ngemextboxmod:nether_rose_quartz_ore",
+  "step": "underground_ores"
+}

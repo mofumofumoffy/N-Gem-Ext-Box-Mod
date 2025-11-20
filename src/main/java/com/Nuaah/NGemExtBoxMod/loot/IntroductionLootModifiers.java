@@ -21,6 +21,7 @@ public class IntroductionLootModifiers {
             LOOT_MODIFIER_SERIALIZERS.register("random_add_items",RandomAddItemModifier.CODEC);
 
     public static void register(IEventBus eventBus){
+        System.out.println("loot_table_reg");
         LOOT_MODIFIER_SERIALIZERS.register(eventBus);
     }
 }

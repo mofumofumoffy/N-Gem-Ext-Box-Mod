@@ -29,7 +29,6 @@ public class RandomAddItemModifier extends LootModifier {
     public RandomAddItemModifier(LootItemCondition[] conditionsIn, List<String> items) {
         super(conditionsIn);
         this.items = items;
-
     }
 
     @Override
@@ -41,6 +40,7 @@ public class RandomAddItemModifier extends LootModifier {
             generatedLoot.add(new ItemStack(item));
         }
 
+        System.out.println("loot_table_add");
         return generatedLoot;
     }
 

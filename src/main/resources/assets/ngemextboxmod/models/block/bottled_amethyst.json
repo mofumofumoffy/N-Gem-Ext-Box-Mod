@@ -1,0 +1,96 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"textures": {
+		"8": "ngemextboxmod:block/bottled_amethyst",
+		"particle": "ngemextboxmod:block/bottled_amethyst"
+	},
+	"elements": [
+		{
+			"name": "Glass Bottom",
+			"from": [5, 0, 5],
+			"to": [11, 6, 11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 0, 7]},
+			"faces": {
+				"north": {"uv": [0, 0, 3, 3], "texture": "#8"},
+				"east": {"uv": [0, 3, 3, 6], "texture": "#8"},
+				"south": {"uv": [3, 0, 6, 3], "texture": "#8"},
+				"west": {"uv": [3, 3, 6, 6], "texture": "#8"},
+				"up": {"uv": [3, 9, 0, 6], "texture": "#8"},
+				"down": {"uv": [9, 0, 6, 3], "texture": "#8"}
+			}
+		},
+		{
+			"name": "Glass Up",
+			"from": [6, 6, 6],
+			"to": [10, 8, 10],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 7, 7]},
+			"faces": {
+				"north": {"uv": [8.5, 5, 10.5, 6], "texture": "#8"},
+				"east": {"uv": [9, 0, 11, 1], "texture": "#8"},
+				"south": {"uv": [9, 1, 11, 2], "texture": "#8"},
+				"west": {"uv": [2, 9, 4, 10], "texture": "#8"},
+				"up": {"uv": [10.5, 5, 8.5, 3], "texture": "#8"},
+				"down": {"uv": [2, 9, 0, 11], "texture": "#8"}
+			}
+		},
+		{
+			"name": "Crystal Cap",
+			"from": [7, 8, 7],
+			"to": [9, 10, 9],
+			"rotation": {"angle": 45, "axis": "x", "origin": [7, 9, 8]},
+			"faces": {
+				"north": {"uv": [9, 2, 10, 3], "texture": "#8"},
+				"east": {"uv": [4, 9, 5, 10], "texture": "#8"},
+				"south": {"uv": [5, 9, 6, 10], "texture": "#8"},
+				"west": {"uv": [6, 9, 7, 10], "texture": "#8"},
+				"up": {"uv": [8, 10, 7, 9], "texture": "#8"},
+				"down": {"uv": [9, 9, 8, 10], "texture": "#8"}
+			}
+		},
+		{
+			"name": "Crystal",
+			"from": [8, 0, 5.5],
+			"to": [8, 6, 10.5],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 2.5, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 0, 3], "texture": "#8"},
+				"east": {"uv": [3, 6, 5.5, 9], "texture": "#8"},
+				"south": {"uv": [0, 0, 0, 3], "texture": "#8"},
+				"west": {"uv": [3, 6, 5.5, 9], "texture": "#8"},
+				"up": {"uv": [0, 0, 0, 3], "texture": "#8"},
+				"down": {"uv": [0, 0, 0, 3], "texture": "#8"}
+			}
+		},
+		{
+			"name": "Crystal",
+			"from": [8, 0, 5.5],
+			"to": [8, 6, 10.5],
+			"rotation": {"angle": -45, "axis": "y", "origin": [8, 2.5, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 0, 3], "texture": "#8"},
+				"east": {"uv": [5.5, 6, 8, 9], "texture": "#8"},
+				"south": {"uv": [0, 0, 0, 3], "texture": "#8"},
+				"west": {"uv": [5.5, 6, 8, 9], "texture": "#8"},
+				"up": {"uv": [0, 0, 0, 3], "texture": "#8"},
+				"down": {"uv": [0, 0, 0, 3], "texture": "#8"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 6, 0]
+		},
+		"thirdperson_lefthand": {
+			"translation": [0, 6.5, 0]
+		},
+		"gui": {
+			"rotation": [25, 45, 0],
+			"translation": [0, 2.75, 0]
+		},
+		"head": {
+			"translation": [0, 15.75, 0]
+		}
+	}
+}

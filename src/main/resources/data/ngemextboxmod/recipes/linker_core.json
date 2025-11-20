@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:stone_slab"
+    },
+    "I": {
+      "item": "minecraft:stone_brick_wall"
+    },
+    "*": {
+      "item" : "minecraft:ender_pearl"
+    }
+  },
+  "pattern": [
+    " I ",
+    "I*I",
+    "###"
+  ],
+  "result": {
+    "item": "ngemextboxmod:linker_core"
+  },
+  "show_notification": true
+}

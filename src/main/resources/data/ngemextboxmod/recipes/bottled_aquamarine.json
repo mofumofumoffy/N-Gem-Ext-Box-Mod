@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:lantern"
+    },
+    {
+      "item": "ngemextboxmod:aquamarine_gem"
+    }
+  ],
+  "result": {
+    "item": "ngemextboxmod:aquamarine_lantern"
+  },
+  "show_notification": true
+}

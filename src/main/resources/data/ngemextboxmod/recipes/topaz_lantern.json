@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:lantern"
+    },
+    {
+      "item": "ngemextboxmod:topaz_gem"
+    }
+  ],
+  "result": {
+    "item": "ngemextboxmod:topaz_lantern"
+  },
+  "show_notification": true
+}

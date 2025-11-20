@@ -1,0 +1,6 @@
+{
+  "variants": {
+      "hanging=true":  { "model": "ngemextboxmod:block/aquamarine_lantern_hanging" },
+      "hanging=false": { "model": "ngemextboxmod:block/aquamarine_lantern" }
+  }
+}

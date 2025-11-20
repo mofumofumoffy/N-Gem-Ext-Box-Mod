@@ -18,4 +18,7 @@ public class NGemExtBoxModItems {
     public static final RegistryObject<Item> SAPPHIRE_GEM = ITEMS.register("sapphire_gem", ItemSapphireGem::new);
     public static final RegistryObject<Item> TOPAZ_GEM = ITEMS.register("topaz_gem", ItemTopazGem::new);
     public static final RegistryObject<Item> TOURMALINE_GEM = ITEMS.register("tourmaline_gem", ItemTourmalineGem::new);
+    public static final RegistryObject<Item> ROSE_QUARTZ_GEM = ITEMS.register("rose_quartz_gem", ItemRoseQuartzGem::new);
+
+    public static final RegistryObject<Item> LINQUARTZ = ITEMS.register("linquartz", ItemLinquartz::new);
 }

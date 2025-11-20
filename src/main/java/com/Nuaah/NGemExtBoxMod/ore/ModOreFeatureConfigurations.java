@@ -27,11 +27,14 @@ public class ModOreFeatureConfigurations {
     public static final ResourceKey<ConfiguredFeature<?,?>> SAPPHIRE_ORE_KEY = createKey("sapphire_ore");
     public static final ResourceKey<ConfiguredFeature<?,?>> TOPAZ_ORE_KEY = createKey("topaz_ore");
     public static final ResourceKey<ConfiguredFeature<?,?>> TOURMALINE_ORE_KEY = createKey("tourmaline_ore");
+    public static final ResourceKey<ConfiguredFeature<?,?>> NETHER_ROSE_QUARTZ_ORE_KEY = createKey("nether_rose_quartz_ore");
+    public static final ResourceKey<ConfiguredFeature<?,?>> GEODE_KEY = createKey("geode");
 
     //置き換えるブロック登録
     public static void bootstrap(BootstapContext<ConfiguredFeature<?,?>> context){
         RuleTest stone = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
         RuleTest deepslate = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
+        RuleTest netherrack = new TagMatchTest(BlockTags.NETHER_CARVER_REPLACEABLES);
 
         List<OreConfiguration.TargetBlockState> ruby_ore_list = List.of( //置き換えリスト
                 OreConfiguration.target(stone, NGemExtBoxModBlocks.Blocks.RUBY_ORE.get().defaultBlockState()),
@@ -73,6 +76,15 @@ public class ModOreFeatureConfigurations {
                 OreConfiguration.target(deepslate, NGemExtBoxModBlocks.Blocks.DEEPSLATE_TOURMALINE_ORE.get().defaultBlockState())
         );
 
+        List<OreConfiguration.TargetBlockState> nether_rose_quartz_ore_list = List.of( //置き換えリスト
+                OreConfiguration.target(netherrack, NGemExtBoxModBlocks.Blocks.NETHER_ROSE_QUARTZ_ORE.get().defaultBlockState())
+        );
+
+        List<OreConfiguration.TargetBlockState> geode_list = List.of( //置き換えリスト
+                OreConfiguration.target(stone, NGemExtBoxModBlocks.Blocks.GEODE.get().defaultBlockState()),
+                OreConfiguration.target(deepslate, NGemExtBoxModBlocks.Blocks.DEEPSLATE_GEODE.get().defaultBlockState())
+        );
+
         //鉱脈設定
         FeatureUtils.register(context,RUBY_ORE_KEY, Feature.ORE,new OreConfiguration(ruby_ore_list,7,0.75F));
         FeatureUtils.register(context,AQUAMARINE_ORE_KEY, Feature.ORE,new OreConfiguration(aquamarine_ore_list,7,0.75F));
@@ -82,6 +94,8 @@ public class ModOreFeatureConfigurations {
         FeatureUtils.register(context,SAPPHIRE_ORE_KEY, Feature.ORE,new OreConfiguration(sapphire_ore_list,7,0.75F));
         FeatureUtils.register(context,TOPAZ_ORE_KEY, Feature.ORE,new OreConfiguration(topaz_ore_list,7,0.75F));
         FeatureUtils.register(context,TOURMALINE_ORE_KEY, Feature.ORE,new OreConfiguration(tourmaline_ore_list,7,0.75F));
+        FeatureUtils.register(context,NETHER_ROSE_QUARTZ_ORE_KEY, Feature.ORE,new OreConfiguration(nether_rose_quartz_ore_list,5,0.5F));
+        FeatureUtils.register(context,GEODE_KEY, Feature.ORE,new OreConfiguration(geode_list,5,0.8F));
     }
 
     public static ResourceKey<ConfiguredFeature<?,?>> createKey(String name){

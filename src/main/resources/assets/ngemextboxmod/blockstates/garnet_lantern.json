@@ -1,0 +1,6 @@
+{
+  "variants": {
+      "hanging=true":  { "model": "ngemextboxmod:block/garnet_lantern_hanging" },
+      "hanging=false": { "model": "ngemextboxmod:block/garnet_lantern" }
+  }
+}

@@ -42,8 +42,12 @@ public class GemstoneWorkbenchEntity extends BlockEntity implements MenuProvider
                 ItemStack combineItem = itemHandler.getStackInSlot(0);
 
                 if (!combineItem.isEmpty()) { //上スロットに挿入
+                    CompoundTag tag = combineItem.getOrCreateTag();
+                    if (!tag.getBoolean("HasGemCap")) {
+                        tag.putBoolean("HasGemCap", true);
+                        // 以降、この ItemStack から Capability が取得可能になる
+                    }
                     combineItem.getCapability(NGemExtBoxModCapabilities.GEM_CAP).ifPresent(cap -> {
-
                         if (slotIndex == 0){
                             for (int i = 1; i <= 3; i++) {
                                 itemHandler.setStackInSlot(i, ItemStack.EMPTY);
@@ -86,8 +90,22 @@ public class GemstoneWorkbenchEntity extends BlockEntity implements MenuProvider
                     });
                 } else {
                     // 上スロットが空なら下スロットをすべてクリア
+                    boolean empty = true;
                     for (int i = 1; i <= 3; i++) {
+                        System.out.println("clear");
+                        if(!itemHandler.getStackInSlot(i).isEmpty()) empty = false;
+                        if(!itemHandler.getStackInSlot(i).isEmpty()) System.out.println("empty");;
                         itemHandler.setStackInSlot(i, ItemStack.EMPTY);
+                    }
+
+                    //宝石ついてない
+                    if (empty){
+                        System.out.println("EMPTY");
+                        CompoundTag tag = combineItem.getOrCreateTag();
+                        if (!tag.getBoolean("HasGemCap")) {
+                            System.out.println("EMPTY CAP");
+                            tag.putBoolean("HasGemCap", false);
+                        }
                     }
                 }
             } catch (Exception e) {
@@ -95,6 +113,8 @@ public class GemstoneWorkbenchEntity extends BlockEntity implements MenuProvider
             } finally {
                 updatingSlots = false; // フラグリセット
             }
+
+            setChanged();
         }
 
         @Override

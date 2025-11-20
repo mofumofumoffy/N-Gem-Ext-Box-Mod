@@ -1,0 +1,15 @@
+{
+  "minecraft:diamond" : 3000,
+  "minecraft:emerald" : 1500,
+  "minecraft:amethyst_shard" :  30,
+  "minecraft:lapis_lazuli" :  50,
+  "ngemextboxmod:aquamarine_gem" : 800,
+  "ngemextboxmod:moonstone_gem" : 800,
+  "ngemextboxmod:peridot_gem" : 800,
+  "ngemextboxmod:sapphire_gem"  : 1300,
+  "ngemextboxmod:tourmaline_gem"  : 800,
+  "ngemextboxmod:topaz_gem" : 500,
+  "ngemextboxmod:garnet_gem" : 1300,
+  "ngemextboxmod:ruby_gem" : 1300,
+  "ngemextboxmod:rose_quartz_gem" : 1000
+}

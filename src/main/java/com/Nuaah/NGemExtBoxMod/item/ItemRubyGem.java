@@ -12,16 +12,4 @@ public class ItemRubyGem extends Item {
     public ItemRubyGem() {
         super(new Properties());
     }
-
-    @Override
-    public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {
-        ItemStack stack = player.getItemInHand(hand);
-        if (stack.is(Tags.Items.GEMS)){
-            System.out.println("yes");
-        } else {
-            System.out.println("no");
-        }
-
-        return InteractionResultHolder.consume(stack);
-    }
 }
