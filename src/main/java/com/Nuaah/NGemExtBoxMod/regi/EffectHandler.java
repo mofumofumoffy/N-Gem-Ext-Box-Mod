@@ -338,7 +338,7 @@ public class EffectHandler {
 
         AttributeInstance maxHealth = player.getAttribute(Attributes.MAX_HEALTH);
         // 体力バー更新
-        player.setHealth(player.getMaxHealth());
+        player.setHealth(player.getHealth());
         maxHealth.removeModifier(GEM_HEALTH_BONUS_UUID);
 
         if (bonusHealth[0] > 0) {
@@ -350,8 +350,6 @@ public class EffectHandler {
             );
             maxHealth.addPermanentModifier(mod);
         }
-
-
 
         if (player instanceof ServerPlayer serverPlayer) { //リンクォーツ処理
             ItemStack heldItem = event.player.getMainHandItem();
