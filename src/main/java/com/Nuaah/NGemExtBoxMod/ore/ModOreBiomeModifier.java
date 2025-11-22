@@ -25,6 +25,8 @@ public class ModOreBiomeModifier {
     public static final ResourceKey<BiomeModifier> SAPPHIRE_ORE_KEY = createKey("sapphire_ore");
     public static final ResourceKey<BiomeModifier> TOPAZ_ORE_KEY = createKey("topaz_ore");
     public static final ResourceKey<BiomeModifier> TOURMALINE_ORE_KEY = createKey("tourmaline_ore");
+    public static final ResourceKey<BiomeModifier> NETHER_ROSE_QUARTZ_ORE_KEY = createKey("nether_rose_quartz_ore");
+    public static final ResourceKey<BiomeModifier> GEODE = createKey("geode");
 
     public static void bootstrap(BootstapContext<BiomeModifier> context){
         HolderGetter<Biome> biome = context.lookup((Registries.BIOME));
@@ -76,6 +78,18 @@ public class ModOreBiomeModifier {
         context.register(TOURMALINE_ORE_KEY,new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
                 biome.getOrThrow(BiomeTags.IS_OVERWORLD), //バイオーム
                 HolderSet.direct(placedFeature.getOrThrow(ModOrePlacedFeature.TOURMALINE_ORE_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES
+        ));
+
+        context.register(NETHER_ROSE_QUARTZ_ORE_KEY,new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biome.getOrThrow(BiomeTags.IS_NETHER), //バイオーム
+                HolderSet.direct(placedFeature.getOrThrow(ModOrePlacedFeature.NETHER_ROSE_QUARTZ_ORE_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES
+        ));
+
+        context.register(GEODE,new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biome.getOrThrow(BiomeTags.IS_OVERWORLD), //バイオーム
+                HolderSet.direct(placedFeature.getOrThrow(ModOrePlacedFeature.GEODE)),
                 GenerationStep.Decoration.UNDERGROUND_ORES
         ));
     }

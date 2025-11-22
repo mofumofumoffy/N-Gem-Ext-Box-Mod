@@ -8,6 +8,7 @@
     "ngemextboxmod:sapphire_ore",
     "ngemextboxmod:topaz_ore",
     "ngemextboxmod:tourmaline_ore",
+    "ngemextboxmod:nether_rose_quartz_ore",
 
     "ngemextboxmod:deepslate_aquamarine_ore",
     "ngemextboxmod:deepslate_garnet_ore",
@@ -16,6 +17,22 @@
     "ngemextboxmod:deepslate_ruby_ore",
     "ngemextboxmod:deepslate_sapphire_ore",
     "ngemextboxmod:deepslate_topaz_ore",
-    "ngemextboxmod:deepslate_tourmaline_ore"
+    "ngemextboxmod:deepslate_tourmaline_ore",
+
+    "ngemextboxmod:aquamarine_lantern",
+    "ngemextboxmod:garnet_lantern",
+    "ngemextboxmod:moonstone_lantern",
+    "ngemextboxmod:peridot_lantern",
+    "ngemextboxmod:ruby_lantern",
+    "ngemextboxmod:sapphire_lantern",
+    "ngemextboxmod:topaz_lantern",
+    "ngemextboxmod:tourmaline_lantern",
+    "ngemextboxmod:amethyst_lantern",
+    "ngemextboxmod:rose_quartz_lantern",
+
+    "ngemextboxmod:geode",
+    "ngemextboxmod:deepslate_geode",
+
+    "ngemextboxmod:linker_core"
   ]
 }

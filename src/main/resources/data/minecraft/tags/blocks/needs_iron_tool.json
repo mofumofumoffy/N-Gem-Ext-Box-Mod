@@ -16,6 +16,9 @@
     "ngemextboxmod:deepslate_ruby_ore",
     "ngemextboxmod:deepslate_sapphire_ore",
     "ngemextboxmod:deepslate_topaz_ore",
-    "ngemextboxmod:deepslate_tourmaline_ore"
+    "ngemextboxmod:deepslate_tourmaline_ore",
+
+    "ngemextboxmod:geode",
+    "ngemextboxmod:deepslate_geode"
   ]
 }

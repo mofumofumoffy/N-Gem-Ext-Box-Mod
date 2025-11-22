@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:lantern"
+    },
+    {
+      "item": "ngemextboxmod:moonstone_gem"
+    }
+  ],
+  "result": {
+    "item": "ngemextboxmod:moonstone_lantern"
+  },
+  "show_notification": true
+}

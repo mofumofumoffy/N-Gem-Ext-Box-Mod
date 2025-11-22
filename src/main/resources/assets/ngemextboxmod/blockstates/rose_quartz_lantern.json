@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "hanging=true,facing=north":  { "model": "ngemextboxmod:block/rose_quartz_lantern_hanging" },
+    "hanging=true,facing=east":   { "model": "ngemextboxmod:block/rose_quartz_lantern_hanging", "y": 90 },
+    "hanging=true,facing=south":  { "model": "ngemextboxmod:block/rose_quartz_lantern_hanging", "y": 180 },
+    "hanging=true,facing=west":   { "model": "ngemextboxmod:block/rose_quartz_lantern_hanging", "y": 270 },
+
+    "hanging=false,facing=north": { "model": "ngemextboxmod:block/rose_quartz_lantern" },
+    "hanging=false,facing=east":  { "model": "ngemextboxmod:block/rose_quartz_lantern", "y": 90 },
+    "hanging=false,facing=south": { "model": "ngemextboxmod:block/rose_quartz_lantern", "y": 180 },
+    "hanging=false,facing=west":  { "model": "ngemextboxmod:block/rose_quartz_lantern", "y": 270 }
+  }
+}

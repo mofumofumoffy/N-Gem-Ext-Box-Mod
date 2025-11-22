@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "ngemextboxmod:block/linker_core"
+    }
+  }
+}

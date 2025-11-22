@@ -9,7 +9,7 @@
   "item.ngemextboxmod.sapphire_gem" : "サファイア",
   "item.ngemextboxmod.topaz_gem" : "トパーズ",
   "item.ngemextboxmod.tourmaline_gem" : "トルマリン",
-
+  "item.ngemextboxmod.rose_quartz_gem" : "ローズクォーツ",
 
   "block.ngemextboxmod.ruby_ore" : "ルビー鉱石",
   "block.ngemextboxmod.aquamarine_ore" : "アクアマリン鉱石",
@@ -19,6 +19,7 @@
   "block.ngemextboxmod.sapphire_ore" : "サファイア鉱石",
   "block.ngemextboxmod.topaz_ore" : "トパーズ鉱石",
   "block.ngemextboxmod.tourmaline_ore" : "トルマリン鉱石",
+  "block.ngemextboxmod.nether_rose_quartz_ore" : "ローズクォーツ鉱石",
 
   "block.ngemextboxmod.deepslate_ruby_ore" : "深層ルビー鉱石",
   "block.ngemextboxmod.deepslate_aquamarine_ore" : "深層アクアマリン鉱石",
@@ -31,7 +32,35 @@
 
   "block.ngemextboxmod.gemstone_workbench" : "宝石職人の作業台",
   "container.ngemextboxmod.gemstone_workbench" : "加工スペース",
+  "container.ngemextboxmod.linker_core" : "リンカーコア",
   "container.ngemextboxmod.inventory" : "インベントリ",
+
+  "block.ngemextboxmod.geode" : "ジオード",
+  "block.ngemextboxmod.deepslate_geode" : "深層ジオード",
+  "block.ngemextboxmod.linker_core" : "リンカーコア",
+  "item.ngemextboxmod.linquartz" : "リンクォーツ",
+
+  "block.ngemextboxmod.ruby_lantern" : "ルビーのランタン",
+  "block.ngemextboxmod.aquamarine_lantern" : "アクアマリンのランタン",
+  "block.ngemextboxmod.garnet_lantern" : "ガーネットのランタン",
+  "block.ngemextboxmod.moonstone_lantern" : "ムーンストーンのランタン",
+  "block.ngemextboxmod.peridot_lantern" : "ペリドットのランタン",
+  "block.ngemextboxmod.sapphire_lantern" : "サファイアのランタン",
+  "block.ngemextboxmod.topaz_lantern" : "トパーズのランタン",
+  "block.ngemextboxmod.tourmaline_lantern" : "トルマリンのランタン",
+  "block.ngemextboxmod.amethyst_lantern" : "アメジストのランタン",
+  "block.ngemextboxmod.rose_quartz_lantern" : "ローズクォーツのランタン",
+
+  "block.ngemextboxmod.bottled_ruby" : "瓶詰めのルビー",
+  "block.ngemextboxmod.bottled_aquamarine" : "瓶詰めのアクアマリン",
+  "block.ngemextboxmod.bottled_garnet" : "瓶詰めのガーネット",
+  "block.ngemextboxmod.bottled_moonstone" : "瓶詰めのムーンストーン",
+  "block.ngemextboxmod.bottled_peridot" : "瓶詰めのペリドット",
+  "block.ngemextboxmod.bottled_sapphire" : "瓶詰めのサファイア",
+  "block.ngemextboxmod.bottled_topaz" : "瓶詰めのトパーズ",
+  "block.ngemextboxmod.bottled_tourmaline" : "瓶詰めのトルマリン",
+  "block.ngemextboxmod.bottled_amethyst" : "瓶詰めのアメジスト",
+  "block.ngemextboxmod.bottled_rose_quartz" : "瓶詰めのローズクォーツ",
 
   "tooltip.ngemextboxmod.ruby_gem" : "ルビー",
   "tooltip.ngemextboxmod.aquamarine_gem" : "アクアマリン",
@@ -41,6 +70,7 @@
   "tooltip.ngemextboxmod.sapphire_gem" : "サファイア",
   "tooltip.ngemextboxmod.topaz_gem" : "トパーズ",
   "tooltip.ngemextboxmod.tourmaline_gem" : "トルマリン",
+  "tooltip.ngemextboxmod.rose_quartz_gem" : "ローズクォーツ",
 
   "tooltip.desc.ngemextboxmod.ruby_gem" : "火属性",
   "tooltip.desc.ngemextboxmod.aquamarine_gem" : "水中呼吸",
@@ -54,7 +84,10 @@
   "tooltip.desc.ngemextboxmod.emerald" : "再生",
   "tooltip.desc.ngemextboxmod.lapis_lazuli" : "経験値",
   "tooltip.desc.ngemextboxmod.amethyst_shard" : "毒",
+  "tooltip.desc.ngemextboxmod.rose_quartz_gem" : "最大体力",
 
   "tooltip.desc.ngemextboxmod.combine.effect" : "埋め込み効果",
-  "tooltip.desc.ngemextboxmod.combine.gem" : "埋め込み宝石"
+  "tooltip.desc.ngemextboxmod.combine.gem" : "埋め込み宝石",
+
+  "entity.minecraft.villager.ngemextboxmod.jeweler" : "宝石商人"
 }

@@ -1,6 +1,7 @@
 package com.Nuaah.NGemExtBoxMod.regi.tag;
 
 import com.Nuaah.NGemExtBoxMod.main.NGemExtBoxMod;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
@@ -39,9 +40,15 @@ public class NGemExtBoxModTags {
         public static final TagKey<Item> COMBINE_ARMOR_GEMS = tag("combine_armor_gems");
         public static final TagKey<Item> COMBINE_TOOL_GEMS = tag("combine_tool_gems");
         public static final TagKey<Item> COMBINE_GEMS = tag("combine_gems");
+        public static final TagKey<Item> NGEMEXTBOXMOD_GES = tag("ngemextboxmod_gems");
+
 
         public static TagKey<Item> tag (String name){
             return ItemTags.create(new ResourceLocation(NGemExtBoxMod.MOD_ID,name));
         }
+
+        public static final TagKey<Item> PAXELS =
+                TagKey.create(Registries.ITEM, new ResourceLocation("forge", "paxels"));
+
     }
 }

@@ -6,9 +6,12 @@ import com.Nuaah.NGemExtBoxMod.block.gui.container.NGemExtBoxModContainerTypes;
 import com.Nuaah.NGemExtBoxMod.loot.IntroductionLootModifiers;
 import com.Nuaah.NGemExtBoxMod.regi.NGemExtBoxModBlocks;
 import com.Nuaah.NGemExtBoxMod.regi.NGemExtBoxModItems;
+import com.Nuaah.NGemExtBoxMod.regi.net.NetworkHandler;
 import com.Nuaah.NGemExtBoxMod.regi.tab.NGemExtBoxModTabs;
+import com.Nuaah.NGemExtBoxMod.villager.NGemExtBoxModVillager;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod("ngemextboxmod")
@@ -25,7 +28,14 @@ public class NGemExtBoxMod {
         NGemExtBoxModBlockEntityTypes.BLOCK_ENTITY_TYPES.register(bus);
         NGemExtBoxModContainerTypes.MENU_TYPES.register(bus);
         IntroductionLootModifiers.register(bus);
+        NGemExtBoxModVillager.register(bus);
 
         NGemExtBoxModTabs.MOD_TABS.register(bus);
+
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+    }
+
+    private void setup(final FMLCommonSetupEvent event) {
+        NetworkHandler.register();
     }
 }

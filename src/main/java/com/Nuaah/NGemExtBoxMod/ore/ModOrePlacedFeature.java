@@ -24,6 +24,8 @@ public class ModOrePlacedFeature {
     public static final ResourceKey<PlacedFeature> SAPPHIRE_ORE_KEY = createKey("sapphire_ore");
     public static final ResourceKey<PlacedFeature> TOPAZ_ORE_KEY = createKey("topaz_ore");
     public static final ResourceKey<PlacedFeature> TOURMALINE_ORE_KEY = createKey("tourmaline_ore");
+    public static final ResourceKey<PlacedFeature> NETHER_ROSE_QUARTZ_ORE_KEY = createKey("nether_rose_quartz_ore");
+    public static final ResourceKey<PlacedFeature> GEODE = createKey("geode");
 
     //生成高度の登録
     public static void bootstrap(BootstapContext<PlacedFeature> context){
@@ -36,6 +38,8 @@ public class ModOrePlacedFeature {
         Holder<ConfiguredFeature<?,?>> sapphire_ore = holderGetter.getOrThrow(ModOreFeatureConfigurations.SAPPHIRE_ORE_KEY);
         Holder<ConfiguredFeature<?,?>> topaz_ore = holderGetter.getOrThrow(ModOreFeatureConfigurations.TOPAZ_ORE_KEY);
         Holder<ConfiguredFeature<?,?>> tourmaline_ore = holderGetter.getOrThrow(ModOreFeatureConfigurations.TOURMALINE_ORE_KEY);
+        Holder<ConfiguredFeature<?,?>> nether_rose_quartz_ore = holderGetter.getOrThrow(ModOreFeatureConfigurations.NETHER_ROSE_QUARTZ_ORE_KEY);
+        Holder<ConfiguredFeature<?,?>> geode = holderGetter.getOrThrow(ModOreFeatureConfigurations.GEODE_KEY);
 
         // 引数1 1チャンクの生成数 引数2 生成範囲
         PlacementUtils.register(context,SAPPHIRE_ORE_KEY,sapphire_ore,commonOrePlacement(5
@@ -61,6 +65,12 @@ public class ModOrePlacedFeature {
 
         PlacementUtils.register(context,TOPAZ_ORE_KEY,topaz_ore,commonOrePlacement(20
                 ,HeightRangePlacement.triangle(VerticalAnchor.absolute(-48),VerticalAnchor.absolute(64))));
+
+        PlacementUtils.register(context,NETHER_ROSE_QUARTZ_ORE_KEY,nether_rose_quartz_ore,commonOrePlacement(20
+                ,HeightRangePlacement.triangle(VerticalAnchor.bottom(),VerticalAnchor.top())));
+
+        PlacementUtils.register(context,GEODE,geode,commonOrePlacement(50
+                ,HeightRangePlacement.uniform(VerticalAnchor.bottom(),VerticalAnchor.absolute(16))));
     }
 
 

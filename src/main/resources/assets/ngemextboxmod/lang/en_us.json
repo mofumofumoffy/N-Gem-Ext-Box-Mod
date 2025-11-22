@@ -9,6 +9,7 @@
   "item.ngemextboxmod.sapphire_gem" : "Sapphire",
   "item.ngemextboxmod.topaz_gem" : "Topaz",
   "item.ngemextboxmod.tourmaline_gem" : "Tourmaline",
+  "item.ngemextboxmod.rose_quartz_gem" : "Rose Quartz",
 
   "block.ngemextboxmod.ruby_ore" : "Ruby Ore",
   "block.ngemextboxmod.aquamarine_ore" : "Aquamarine Ore",
@@ -18,6 +19,7 @@
   "block.ngemextboxmod.sapphire_ore" : "Sapphire Ore",
   "block.ngemextboxmod.topaz_ore" : "Topaz Ore",
   "block.ngemextboxmod.tourmaline_ore" : "Tourmaline Ore",
+  "block.ngemextboxmod.nether_rose_quartz_ore" : "Rose Quartz Ore",
 
   "block.ngemextboxmod.deepslate_ruby_ore" : "Deepslate Ruby Ore",
   "block.ngemextboxmod.deepslate_aquamarine_ore" : "Deepslate Aquamarine Ore",
@@ -30,7 +32,35 @@
 
   "block.ngemextboxmod.gemstone_workbench" : "Gemstone Workbench",
   "container.ngemextboxmod.gemstone_workbench" : "Combine Space",
+  "container.ngemextboxmod.linker_core" : "Linker Core",
   "container.ngemextboxmod.inventory" : "Inventory",
+
+  "block.ngemextboxmod.geode" : "Geode",
+  "block.ngemextboxmod.deepslate_geode" : "Deepslate Geode",
+  "block.ngemextboxmod.linker_core" : "Linker Core",
+  "item.ngemextboxmod.linquartz" : "Linquartz",
+
+  "block.ngemextboxmod.ruby_lantern" : "Ruby Lantern",
+  "block.ngemextboxmod.aquamarine_lantern" : "Aquamarine Lantern",
+  "block.ngemextboxmod.garnet_lantern" : "Garnet Lantern",
+  "block.ngemextboxmod.moonstone_lantern" : "Moonstone Lantern",
+  "block.ngemextboxmod.peridot_lantern" : "Peridot Lantern",
+  "block.ngemextboxmod.sapphire_lantern" : "Sapphire Lantern",
+  "block.ngemextboxmod.topaz_lantern" : "Topaz Lantern",
+  "block.ngemextboxmod.tourmaline_lantern" : "Tourmaline Lantern",
+  "block.ngemextboxmod.amethyst_lantern" : "Amethyst Lantern",
+  "block.ngemextboxmod.rose_quartz_lantern" : "Rose Quartz Lantern",
+
+  "block.ngemextboxmod.bottled_ruby" : "Bottled Ruby",
+  "block.ngemextboxmod.bottled_aquamarine" : "Bottled Aquamarine",
+  "block.ngemextboxmod.bottled_garnet" : "Bottled Garnet",
+  "block.ngemextboxmod.bottled_moonstone" : "Bottled Moonstone",
+  "block.ngemextboxmod.bottled_peridot" : "Bottled Peridot",
+  "block.ngemextboxmod.bottled_sapphire" : "Bottled Sapphire",
+  "block.ngemextboxmod.bottled_topaz" : "Bottled Topaz",
+  "block.ngemextboxmod.bottled_tourmaline" : "Bottled Tourmaline",
+  "block.ngemextboxmod.bottled_amethyst" : "Bottled Amethyst",
+  "block.ngemextboxmod.bottled_rose_quartz" : "Bottled Rose Quartz",
 
   "tooltip.ngemextboxmod.ruby_gem" : "Ruby",
   "tooltip.ngemextboxmod.aquamarine_gem" : "Aquamarine",
@@ -40,6 +70,7 @@
   "tooltip.ngemextboxmod.sapphire_gem" : "Sapphire",
   "tooltip.ngemextboxmod.topaz_gem" : "Topaz",
   "tooltip.ngemextboxmod.tourmaline_gem" : "Tourmaline",
+  "tooltip.ngemextboxmod.rose_quartz_gem" : "Rose Quartz",
 
   "tooltip.desc.ngemextboxmod.ruby_gem" : "Fire Aspect",
   "tooltip.desc.ngemextboxmod.aquamarine_gem" : "Aqua Affinity",
@@ -53,7 +84,10 @@
   "tooltip.desc.ngemextboxmod.emerald" : "Heal",
   "tooltip.desc.ngemextboxmod.lapis_lazuli" : "XP",
   "tooltip.desc.ngemextboxmod.amethyst_shard" : "Poison",
+  "tooltip.desc.ngemextboxmod.rose_quartz_gem" : "Max Health",
 
   "tooltip.desc.ngemextboxmod.combine.effect" : "Combine Effect",
-  "tooltip.desc.ngemextboxmod.combine.gem" : "Combined Gem"
+  "tooltip.desc.ngemextboxmod.combine.gem" : "Combined Gem",
+
+  "entity.minecraft.villager.ngemextboxmod.jeweler" : "Jeweler"
 }

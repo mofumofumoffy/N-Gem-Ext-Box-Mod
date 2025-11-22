@@ -3,6 +3,13 @@ package com.Nuaah.NGemExtBoxMod.regi;
 import com.Nuaah.NGemExtBoxMod.block.entity.GemData;
 import com.Nuaah.NGemExtBoxMod.block.entity.NGemExtBoxModCapabilities;
 import com.Nuaah.NGemExtBoxMod.main.NGemExtBoxMod;
+import com.Nuaah.NGemExtBoxMod.regi.net.LinkerCoreSyncPacket;
+import com.Nuaah.NGemExtBoxMod.regi.net.NetworkHandler;
+import com.Nuaah.NGemExtBoxMod.villager.NGemExtBoxModVillager;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -11,10 +18,13 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Equipable;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.event.ItemAttributeModifierEvent;
@@ -25,21 +35,129 @@ import net.minecraftforge.event.entity.living.LivingFallEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.swing.plaf.basic.BasicComboBoxUI;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 @Mod.EventBusSubscriber(modid = NGemExtBoxMod.MOD_ID)
 public class EffectHandler {
 
+    private static final Random random = new Random();
+
+    @SubscribeEvent
+    public static void addCustomTrade(VillagerTradesEvent event){
+        if (event.getType() == NGemExtBoxModVillager.JEWELER.get()){
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> tredes = event.getTrades();
+
+            List<ItemStack> gems = new ArrayList<ItemStack>(Arrays.asList(
+                    new ItemStack(NGemExtBoxModItems.RUBY_GEM.get()),
+                    new ItemStack(NGemExtBoxModItems.SAPPHIRE_GEM.get()),
+                    new ItemStack(NGemExtBoxModItems.PERIDOT_GEM.get()),
+                    new ItemStack(NGemExtBoxModItems.AQUAMARINE_GEM.get()),
+                    new ItemStack(NGemExtBoxModItems.TOURMALINE_GEM.get()),
+                    new ItemStack(NGemExtBoxModItems.TOPAZ_GEM.get()),
+                    new ItemStack(NGemExtBoxModItems.GARNET_GEM.get()),
+                    new ItemStack(NGemExtBoxModItems.MOONSTONE_GEM.get())
+                )
+            );
+
+            Collections.shuffle(gems);
+
+            tredes.get(1).add((trader, rand) -> {
+                int emeraldCost = 3 + random.nextInt(3); // 2〜5エメラルド
+                return new MerchantOffer(
+                    new ItemStack(Items.EMERALD, emeraldCost),
+                    gems.get(0).copy(),
+                    5, 5, 0.05F
+                );
+            });
+
+            tredes.get(1).add((trader, rand) -> {
+                int emeraldCost = 3 + random.nextInt(3); // 2〜5エメラルド
+                return new MerchantOffer(
+                        new ItemStack(Items.EMERALD, emeraldCost),
+                        gems.get(1).copy(),
+                        5, 5, 0.05F
+                );
+            });
+
+            tredes.get(1).add((trader, rand) -> {
+                int emeraldCost = 3 + random.nextInt(3); // 2〜5エメラルド
+                return new MerchantOffer(
+                        new ItemStack(Items.EMERALD, emeraldCost),
+                        gems.get(2).copy(),
+                        5, 5, 0.05F
+                );
+            });
+
+            tredes.get(2).add((trader, rand) -> {
+                int emeraldCost = 1 + random.nextInt(3); //
+                return new MerchantOffer(
+                        new ItemStack(Items.EMERALD, emeraldCost),
+                        new ItemStack(NGemExtBoxModBlocks.Blocks.GEODE.get()),
+                        10, 5, 0.05F
+                );
+            });
+
+            tredes.get(2).add((trader, rand) -> {
+                int emeraldCost = 1 + random.nextInt(3); //
+                return new MerchantOffer(
+                        gems.get(3).copy(),
+                        new ItemStack(Items.EMERALD, emeraldCost),
+                        6, 5, 0.05F
+                );
+            });
+
+            tredes.get(2).add((trader, rand) -> {
+                int emeraldCost = 3 + random.nextInt(3); //
+                return new MerchantOffer(
+                        new ItemStack(Items.EMERALD, emeraldCost),
+                        gems.get(2).copy(),
+                        7, 5, 0.05F
+                );
+            });
+
+            tredes.get(3).add((trader, rand) -> {
+                int tradeCount = 1 + random.nextInt(3); //
+                return new MerchantOffer(
+                        new ItemStack(gems.get(3).getItem(),tradeCount),
+                        gems.get(4).copy(),
+                        10, 5, 0.05F
+                );
+            });
+
+            tredes.get(3).add((trader, rand) -> {
+                int tradeCount = 1 + random.nextInt(3); //
+                return new MerchantOffer(
+                        new ItemStack(gems.get(3).getItem(),tradeCount),
+                        gems.get(5).copy(),
+                        10, 5, 0.05F
+                );
+            });
+
+            tredes.get(4).add((trader, rand) -> {
+                int emeraldCost = 2 + random.nextInt(2); // 2〜4エメラルド
+                return new MerchantOffer(
+                        new ItemStack(Items.EMERALD, emeraldCost),
+                        gems.get(6).copy(),
+                        5, 5, 0.05F
+                );
+            });
+        }
+    }
+
+    //結合効果
     private static final UUID GEM_DEFENSE_ARMOR_UUID = UUID.fromString("9b58f60f-b4e1-47f0-90f6-b83fdd2f9cda");
     private static final UUID GEM_DAMAGE_BONUS_UUID = UUID.fromString("d23709b8-6f76-4dc6-b3a1-6c5cec7e9d5b");
     private static final UUID GEM_SPEED_BONUS_UUID = UUID.fromString("a049b884-7a69-4a07-a619-4e4a301b8303");
     private static final UUID GEM_WATERSPEED_BONUS_UUID = UUID.fromString("ae321664-b90a-49d2-a14e-e99d66fd4cfa");
+    private static final UUID GEM_HEALTH_BONUS_UUID = UUID.fromString("b1f6472c-5ad7-4ae8-9bda-4440e0c8e000");
+
 
     @SubscribeEvent
     public static void onAttributeModify(ItemAttributeModifierEvent event) {
@@ -121,7 +239,6 @@ public class EffectHandler {
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
         Player player = event.player;
 
-
         if(!player.isEyeInFluid(FluidTags.WATER)){ //水中か判定
             inWater = false;
             air = player.getAirSupply(); //呼吸リセット
@@ -133,6 +250,7 @@ public class EffectHandler {
         int[] bonusHeal = {0};
         float[] bonusSpeed = {0};
         double[] bonusWaterSpeed = {0};
+        int[] bonusHealth = {0};
 
         for (ItemStack armor : player.getArmorSlots()) {
             armor.getCapability(NGemExtBoxModCapabilities.GEM_CAP).ifPresent(cap -> {
@@ -151,6 +269,7 @@ public class EffectHandler {
 
                     if (id.contains("emerald")) bonusHeal[0] += 5; //再生
                     if (id.contains("peridot")) bonusSpeed[0] += 0.1F; //移動速度
+                    if (id.contains("rose_quartz")) bonusHealth[0] += 1; //体力
                 }
             });
         }
@@ -164,7 +283,6 @@ public class EffectHandler {
             }
             player.setAirSupply(air);
         }
-
 
         // 再生
         if (bonusHeal[0] > 0) {
@@ -215,6 +333,40 @@ public class EffectHandler {
                 // 入力がないときは自然減速
                 Vec3 motion = player.getDeltaMovement();
                 player.setDeltaMovement(new Vec3(motion.x * 0.8D, motion.y, motion.z * 0.8D));
+            }
+        }
+
+        AttributeInstance maxHealth = player.getAttribute(Attributes.MAX_HEALTH);
+        // 体力バー更新
+        player.setHealth(player.getHealth());
+        maxHealth.removeModifier(GEM_HEALTH_BONUS_UUID);
+
+        if (bonusHealth[0] > 0) {
+            AttributeModifier mod = new AttributeModifier(
+                    GEM_HEALTH_BONUS_UUID,
+                    "gem_health_boost",
+                    bonusHealth[0] * 2,
+                    AttributeModifier.Operation.ADDITION
+            );
+            maxHealth.addPermanentModifier(mod);
+        }
+
+        if (player instanceof ServerPlayer serverPlayer) { //リンクォーツ処理
+            ItemStack heldItem = event.player.getMainHandItem();
+            if (heldItem.getItem() == NGemExtBoxModItems.LINQUARTZ.get()) { // 特定アイテムをチェック
+                LinkerPowerData data = LinkerPowerData.get(player.level());
+                BlockPos linkerCorePos = LinkerCoreRegistry.getNearestCorePos(player.level(),player.getOnPos());
+
+                double distance = -1;
+                if (linkerCorePos != null){
+                    distance = Math.sqrt(player.getOnPos().distSqr(linkerCorePos));
+
+                    NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> serverPlayer),
+                    new LinkerCoreSyncPacket(data.getLinkerPower(),distance,linkerCorePos));
+                } else {
+                    NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> serverPlayer),
+                    new LinkerCoreSyncPacket(data.getLinkerPower(),distance,new BlockPos(0,0,0)));
+                }
             }
         }
     }

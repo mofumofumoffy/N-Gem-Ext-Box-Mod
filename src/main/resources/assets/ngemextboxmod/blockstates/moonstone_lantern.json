@@ -1,0 +1,6 @@
+{
+  "variants": {
+      "hanging=true":  { "model": "ngemextboxmod:block/moonstone_lantern_hanging" },
+      "hanging=false": { "model": "ngemextboxmod:block/moonstone_lantern" }
+  }
+}

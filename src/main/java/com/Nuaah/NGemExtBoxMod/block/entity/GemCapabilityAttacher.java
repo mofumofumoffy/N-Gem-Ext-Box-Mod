@@ -1,8 +1,11 @@
 package com.Nuaah.NGemExtBoxMod.block.entity;
 
 import com.Nuaah.NGemExtBoxMod.main.NGemExtBoxMod;
+import com.Nuaah.NGemExtBoxMod.regi.tag.NGemExtBoxModTags;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
@@ -16,22 +19,30 @@ public class GemCapabilityAttacher {
 
     @SubscribeEvent
     public static void attachCapability(AttachCapabilitiesEvent<ItemStack> event){
+
         ItemStack stack = event.getObject();
 
         if (stack.is(Tags.Items.ARMORS)
-        || stack.is(ItemTags.SWORDS)
-        || stack.is(ItemTags.PICKAXES)
-        || stack.is(ItemTags.AXES)
-        || stack.is(ItemTags.SHOVELS) ){
-
-            GemCapabilityProvider provider = new GemCapabilityProvider(stack);
+            || stack.is(ItemTags.SWORDS)
+            || stack.is(ItemTags.PICKAXES)
+            || stack.is(ItemTags.AXES)
+            || stack.is(ItemTags.SHOVELS)){
 
             event.addCapability(
-                new ResourceLocation(NGemExtBoxMod.MOD_ID,"gem_cap"),
-                    provider
+                    new ResourceLocation(NGemExtBoxMod.MOD_ID,"gem_cap"),
+                    new GemCapabilityProvider(stack)
             );
 
-            event.addListener(provider::invalidate);
+
+
+//            GemCapabilityProvider provider = new GemCapabilityProvider(stack);
+//
+//            event.addCapability(
+//                new ResourceLocation(NGemExtBoxMod.MOD_ID,"gem_cap"),
+//                    provider
+//            );
+//
+//            event.addListener(provider::invalidate);
         }
     }
 }

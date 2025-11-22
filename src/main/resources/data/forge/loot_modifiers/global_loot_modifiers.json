@@ -1,6 +1,10 @@
 {
   "replace": false,
   "entries": [
-    "ngemextboxmod:add_item_abandoned_mineshaft"
+    "ngemextboxmod:add_item_abandoned_mineshaft",
+    "ngemextboxmod:add_item_desert_pyramid",
+    "ngemextboxmod:add_item_nether_bridge",
+    "ngemextboxmod:add_item_buried_treasure",
+    "ngemextboxmod:add_item_shipwreck_treasure"
   ]
 }

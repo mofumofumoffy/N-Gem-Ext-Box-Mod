@@ -26,7 +26,6 @@ public class AddItemModifier extends LootModifier {
     public AddItemModifier(LootItemCondition[] conditionsIn,Item item) {
         super(conditionsIn);
         this.item = item;
-
     }
 
     @Override
